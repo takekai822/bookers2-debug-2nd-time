@@ -1,4 +1,4 @@
-<%= form_with model: [book, book_comment], url: book_book_comments_path(book), method: :post do |f| %>
+<%= form_with model: [book, book_comment], url: book_book_comments_path(book), method: :post, local: false do |f| %>
   <div class="form-group">
     <%= f.text_area :comment, class: "form-control", rows: "3" %>
   </div>
