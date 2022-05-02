@@ -11,6 +11,13 @@
       <tr>
         <td><%= image_tag user.get_profile_image, size: '80x80' %></td>
         <td><%= user.name %></td>
+        <% if user == current_user %>
+          <td></td>
+        <% else %>
+          <td>
+            <%= render "relationships/btn", user: user %>
+          </td>
+        <% end %>
         <td><%= link_to 'Show', user, class: "user_#{user.id}" %></td>
       </tr>
     <% end %>
